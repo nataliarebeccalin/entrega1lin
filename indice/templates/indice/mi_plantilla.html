@@ -1,0 +1,31 @@
+{% extends 'indice/index.html' %}
+
+{% block bloque_head %}
+    <title>Sobre mi</title>
+{% endblock bloque_head %}
+
+{% block pruebaTemplate %}
+
+    {% block bloque_de_plantilla %}
+    {% endblock bloque_de_plantilla %}
+
+    DATOS
+
+    {% if nombre_largo < 5 %}
+        <p style="color: red;">{{nombre}}</p>
+        <p style="color: blue;">{{apellido}}</p>
+        <p style="color: purple;">{{pais}}</p>
+    {% elif nombre_largo == 5%}
+        <p style="color: green;">{{nombre}}</p>
+        <p style="color: green;">{{apellido}}</p>  
+        <p style="color: purple;">{{pais}}</p> 
+    {% else %}
+        <p style="color: blue;">{{nombre}}</p>
+        <p style="color: red;">{{apellido}}</p>
+        <p style="color: purple;">{{pais}}</p>
+    {% endif %}
+
+    {% for valor in lista %}
+        <p style="color: red;">{{valor}}</p>
+    {% endfor %}
+{% endblock pruebaTemplate %}
