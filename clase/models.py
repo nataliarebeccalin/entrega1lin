@@ -16,10 +16,16 @@ class Profesores(models.Model):
     email = models.EmailField()
     profesión = models.CharField(max_length=30)
 
+class Datos(models.Model):
+    nombre = models.CharField(max_length=20)
+    dato = models.IntegerField()
+
+    def __str__(self):
+        return f"Nombre: {self.nombre} - Dato: {self.dato}"
 
 class Aula(models.Model):
     nombre = models.CharField(max_length=20)
     aula = models.IntegerField()
 
     def __str__(self):
-        return f"Curso: {self.nombre} - Aula: {self.aula}"
+        return f"Clase: {self.nombre} - Aula: {self.aula}"

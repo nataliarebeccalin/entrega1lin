@@ -14,15 +14,6 @@ def otra_vista(request):
                         <h1>Regresa a la pagina anterior</h1>
                         ''')
 
-def numero_random(request):
-    numero = random.randrange(1, 200)
-    texto = f'<h1>Este es tu numero random: {numero}</h1>'
-    return HttpResponse(texto)
-
-def nombre_del_usuario(request, numero):
-    texto = f'<h1>Este es tu numero: {numero}</h1>'
-    return HttpResponse(texto)
-
 def mi_plantilla(request):
 
     nombre = 'Natalia'
