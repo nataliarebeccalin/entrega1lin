@@ -22,11 +22,20 @@
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
-                <a class="navbar-brand" href={% url 'inicio' %}>Inicio</a>
-                <a class="navbar-brand" href={% url 'mi_plantilla' %}>Mi Base</a>
-                <a class="navbar-brand" href={% url 'formulario_clase' %}>Formulario</a>
-                <a class="navbar-brand" href={% url 'busqueda_clase' %}>Buscar Clase</a>
-                <a class="navbar-brand" href={% url 'busqueda_datos' %}>Buscar Datos</a>
+                <a class="navbar-brand" href={% url 'inicio' %}>Home</a>
+                <a class="navbar-brand" href={% url 'acercademi' %}>Acerca de mí</a>
+                <a class="navbar-brand" href={% url 'busqueda_user' %}>Buscar User</a>
+
+                {% if request.user.is_authenticated%}
+                    <a class="navbar-brand" href={% url 'editar' %}>
+                    </a>
+
+                    <a class="navbar-brand" href={% url 'logout' %}>Logout</a>
+                {% else %}
+                    <a class="navbar-brand" href={% url 'login' %}>Login</a>
+                    <a class="navbar-brand" href={% url 'registrar' %}>Regístrate</a>
+                {% endif %}
+
                 {% comment %} <a class="btn btn-primary" href="#signup">Sign Up</a> {% endcomment %}
             </div>
         </nav>

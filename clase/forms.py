@@ -1,14 +1,12 @@
 from django import forms
 
 class Formulario(forms.Form):
-    clase = forms.CharField(max_length=20)
-    aula = forms.IntegerField()
+    nombre = forms.CharField(max_length=20)
+    apellido = forms.CharField(max_length=20)
+    edad = forms.IntegerField()
 
-class BusquedaClase(forms.Form):
-    partial_curso = forms.CharField(label='Buscador', max_length=20)
+class BusquedaUser(forms.Form):
+    partial_user = forms.CharField(label='Buscador', max_length=20)
 
 #class BusquedaAula(forms.Form):
     #escribe = forms.CharField(max_length=20)
-
-class BusquedaDatos(forms.Form):
-    partial_dato = forms.CharField(label='Buscador', max_length=20)

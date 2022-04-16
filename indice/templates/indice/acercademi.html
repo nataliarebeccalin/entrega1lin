@@ -1,7 +1,7 @@
 {% extends 'indice/index.html' %}
 
 {% block bloque_head %}
-    <title>Sobre mi</title>
+    <title>Acerca de mi</title>
 {% endblock bloque_head %}
 
 {% block pruebaTemplate %}
@@ -9,7 +9,7 @@
     {% block bloque_de_plantilla %}
     {% endblock bloque_de_plantilla %}
 
-    DATOS
+    DATOS ACERCA DE MI
 
     {% if nombre_largo < 5 %}
         <p style="color: red;">{{nombre}}</p>
@@ -28,4 +28,8 @@
     {% for valor in lista %}
         <p style="color: red;">{{valor}}</p>
     {% endfor %}
+
+    ACERCA DE LA WEB:
+    Este proyecto es una web semejante a un Blog
+
 {% endblock pruebaTemplate %}

@@ -1,50 +1,38 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from clase.models import Aula, Datos
-from clase.forms import Formulario, BusquedaClase, BusquedaDatos
+from clase.models import User, Datos
+from clase.forms import Formulario, BusquedaUser
 import random  
 
-def nueva_aula(request):
-    aula = random.randrange(0, 50)
-    nueva_aula = Aula(nombre='Aula Clases', aula=aula)
-    nueva_aula.save()
-    return HttpResponse(f"Se creo el aula {nueva_aula.nombre} aula {nueva_aula.aula}")
+def nuevo_user(request):
+    user = random.randrange(0, 50)
+    nuevo_user = User(nombre=user['nombre'], apellido=user['apellido'], edad=user['edad'])
+    nuevo_user.save()
+    return HttpResponse(f"Se creo el user {nuevo_user.nombre} {nuevo_user.apellido} edad {nuevo_user.user}")
 
-def formulario_clase(request):
+def formulario_user(request):
     if request.method == 'POST':
         formulario = Formulario(request.POST)
 
         if formulario.is_valid():
             data = formulario.cleaned_data
-            nueva_aula = Aula(nombre=data['nombre'], aula=data['aula'])
-            nueva_aula.save()
-            return render(request, 'indice/index.html', {'nuevo_curso': nueva_aula})
+            nuevo_user = User(nombre=data['nombre'], apellido=data['apellido'], edad=data['edad'])
+            nuevo_user.save()
+            return render(request, 'indice/index.html', {'nuevo_user': nuevo_user})
 
     formulario = Formulario
-    return render(request, 'clase/formulario_clase.html', {'formulario': formulario})
+    return render(request, 'clase/formulario_user.html', {'formulario': formulario})
 
-def busqueda_clase(request):
-    clases_buscadas = []
-    dato = request.GET.get('partial_curso', None)
+def busqueda_user(request):
+    user_buscado = []
+    nombre = request.GET.get('partial_user', None)
 
-    if dato is not None:
-        clases_buscadas = Aula.objects.filter(nombre__icontains=dato)
+    if nombre is not None:
+        user_buscado = User.objects.filter(nombre__icontains=nombre)
 
-    buscador = BusquedaClase()
+    buscador = BusquedaUser()
     return render(
-        request, "clase/busqueda_clase.html", 
-        {'buscador': buscador, 'clases_buscadas': clases_buscadas, 'dato': dato}
+        request, "clase/busqueda_user.html", 
+        {'buscador': buscador, 'user_buscado': user_buscado, 'nombre': nombre}
         )
 
-def busqueda_datos(request):
-    datos_buscados = []
-    eldato = request.GET.get('partial_datos', None)
-
-    if eldato is not None:
-        datos_buscados = Datos.objects.filter(nombre__icontains=eldato)
-
-    buscador = BusquedaDatos()
-    return render(
-        request, "clase/busqueda_datos.html", 
-        {'buscador': buscador, 'datos_buscados': datos_buscados, 'eldato': eldato}
-        )

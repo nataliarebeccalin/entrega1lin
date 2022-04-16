@@ -1,10 +1,9 @@
 from django.urls import path
 
-from .views import nueva_aula, formulario_clase, busqueda_clase, busqueda_datos
+from .views import nuevo_user, formulario_user, busqueda_user
 
 urlpatterns = [
-    path('nueva-aula/', nueva_aula, name='nueva_aula'),
-    path('formulario-clase/', formulario_clase, name='formulario_clase'),
-    path('busqueda-clase/', busqueda_clase, name="busqueda_clase"),
-    path('busqueda-datos/', busqueda_datos, name="busqueda_datos")
+    path('nueva-aula/', nuevo_user, name='nuevo_user'),
+    path('formulario-user/', formulario_user, name='formulario_user'),
+    path('busqueda-user/', busqueda_user, name="busqueda_user")
 ]

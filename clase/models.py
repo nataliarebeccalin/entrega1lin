@@ -2,20 +2,6 @@ from django.db import models
 
 # Create your models here.
 
-class Alumnos(models.Model):
-    nombre = models.CharField(max_length=20)
-    apellido = models.CharField(max_length=30)
-    email = models.EmailField()
-
-    def __str__(self):
-        return f"{self.nombre} {self.apellido}"
-
-class Profesores(models.Model):
-    nombre = models.CharField(max_length=20)
-    apellido = models.CharField(max_length=30)
-    email = models.EmailField()
-    profesión = models.CharField(max_length=30)
-
 class Datos(models.Model):
     nombre = models.CharField(max_length=20)
     dato = models.IntegerField()
@@ -23,9 +9,18 @@ class Datos(models.Model):
     def __str__(self):
         return f"Nombre: {self.nombre} - Dato: {self.dato}"
 
-class Aula(models.Model):
+class User(models.Model):
     nombre = models.CharField(max_length=20)
-    aula = models.IntegerField()
+    apellido = models.CharField(max_length=20)
+    edad = models.IntegerField()
+    email = models.EmailField()
 
     def __str__(self):
-        return f"Clase: {self.nombre} - Aula: {self.aula}"
+        return f"Nombre: {self.nombre} - Apellido: {self.apellido} - Edad: {self.edad} - Email: {self.email}"
+
+class Blog(models.Model):
+    titulo = "Blog 1"
+    subtitulo = "Subtitulo 1"
+    cuerpo = "Cuerpo 1"
+    autor = "Autor: Natalia Lin"
+    fecha = "Abril 2022"

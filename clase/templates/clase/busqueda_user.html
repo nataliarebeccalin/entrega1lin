@@ -5,7 +5,7 @@
 
 {% block pruebaTemplate %}
     
-    <form action="{% url 'busqueda_datos' %}" method="get">
+    <form action="{% url 'busqueda_user' %}" method="get">
         {% csrf_token %}
 
         <table>
@@ -15,11 +15,11 @@
         <input type="submit" placeholder="Enviar">
     </form>
 
-    {% if eldato %}
-        Se busco por el dato {{eldato}}
-        {% for clase in datos_buscados %}
+    {% if dato %}
+        Se busco por el user {{user}}
+        {% for dato in user_buscado %}
             <li>
-                {{clase}}
+                {{dato}}
             </li>
         {% endfor %}
     {% else %}
