@@ -1,9 +1,15 @@
 from django.urls import path
 
-from .views import nuevo_user, formulario_user, busqueda_user
+from . import views
 
 urlpatterns = [
-    path('nueva-aula/', nuevo_user, name='nuevo_user'),
-    path('formulario-user/', formulario_user, name='formulario_user'),
-    path('busqueda-user/', busqueda_user, name="busqueda_user")
+    path('nuevo/', views.nuevo_user, name='nuevo_user'),
+    path('formulario-user/', views.formulario_user, name='formulario_user'),
+    path('busqueda-user/', views.busqueda_user, name="busqueda_user"),
+
+    path('blog/listado/', views.listado_blog, name='listado_blog'),
+
+    path('blog/crear/', views.crear_blog, name='crear_blog'),
+    path('blog/borrar/<int:id>/', views.borrar_blog, name='borrar_blog'),
+    path('blog/actualizar/<int:id>/', views.actualizar_blog, name='actualizar_blog'),
 ]

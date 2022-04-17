@@ -23,7 +23,8 @@
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
                 <a class="navbar-brand" href={% url 'inicio' %}>Home</a>
-                <a class="navbar-brand" href={% url 'acercademi' %}>Acerca de mí</a>
+                <a class="navbar-brand" href={% url 'about' %}>Acerca de mí</a>
+                <a class="navbar-brand" href={% url 'pages' %}>Pages</a>
                 <a class="navbar-brand" href={% url 'busqueda_user' %}>Buscar User</a>
 
                 {% if request.user.is_authenticated%}

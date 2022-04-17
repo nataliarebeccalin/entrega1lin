@@ -16,11 +16,14 @@ class User(models.Model):
     email = models.EmailField()
 
     def __str__(self):
-        return f"Nombre: {self.nombre} - Apellido: {self.apellido} - Edad: {self.edad} - Email: {self.email}"
+        return f"Nombre: {self.nombre} - Apellido: {self.apellido}"
 
 class Blog(models.Model):
-    titulo = "Blog 1"
-    subtitulo = "Subtitulo 1"
-    cuerpo = "Cuerpo 1"
-    autor = "Autor: Natalia Lin"
-    fecha = "Abril 2022"
+    titulo = models.CharField(max_length=20)
+    subtitulo = models.CharField(max_length=20)
+    cuerpo = models.CharField(max_length=80)
+    autor = models.CharField(max_length=20)
+    fecha = models.CharField(max_length=20)
+
+    def __str__(self):
+        return f"Titulo: {self.titulo}"

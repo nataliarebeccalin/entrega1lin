@@ -34,6 +34,31 @@ def acercademi(request):
 
     return render(request, "indice/acercademi.html", diccionario_de_datos)
 
+def pages(request):
+    
+    titulo = 'Blog Uno'
+
+    diccionario_de_datos = {
+        'titulo': titulo,
+    }
+
+    return render(request, "indice/pages.html", diccionario_de_datos)
+
+def pagesid(request):
+    subtitulo = 'Subtitulo Uno'
+    autor = 'Autor'
+    cuerpo = 'Cuerpo'
+    fecha = 'Fecha'
+
+    diccionario_de_datos = {
+        'subtitulo': subtitulo,
+        'autor': autor,
+        'cuerpo': cuerpo,
+        'fecha': fecha
+    }
+
+    return render(request, "indice/pages.html", diccionario_de_datos)
+
 def login(request):
     
     if request.method == 'POST':

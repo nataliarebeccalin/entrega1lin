@@ -1,0 +1,42 @@
+{% extends 'indice/index.html' %}
+
+{% block bloque_head %}
+    <title>Pages</title>
+{% endblock bloque_head %}
+
+{% block pruebaTemplate %}
+
+    {% block bloque_de_plantilla %}
+    {% endblock bloque_de_plantilla %}
+
+    LOS BLOGS
+
+    {% if nombre_largo > 5 %}
+        <p style="color: red;">{{titulo}}</p>
+        <p style="color: blue;">{{subtitulo}}</p>
+        <p style="color: black;">{{cuerpo}}</p>
+        <p style="color: purple;">{{autor}}</p>
+        <p style="color: brown;">{{fecha}}</p>
+    {% elif nombre_largo == 5%}
+        <p style="color: red;">{{titulo}}</p>
+        <p style="color: blue;">{{subtitulo}}</p>
+        <p style="color: black;">{{cuerpo}}</p>
+        <p style="color: purple;">{{autor}}</p>
+        <p style="color: brown;">{{fecha}}</p>
+    
+    {% else %}
+        <p style="color: red;">{{titulo}}</p>
+        <p style="color: blue;">{{subtitulo}}</p>
+        <p style="color: black;">{{cuerpo}}</p>
+        <p style="color: purple;">{{autor}}</p>
+        <p style="color: brown;">{{fecha}}</p>
+    {% endif %}
+
+    {% for valor in lista %}
+        <p style="color: red;">{{valor}}</p>
+    {% endfor %}
+
+    ACERCA DE LOS BLOGS:
+    Información del Blog
+
+{% endblock pruebaTemplate %}
