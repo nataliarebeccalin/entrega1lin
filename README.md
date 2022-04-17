@@ -5,10 +5,12 @@ Nombre: Natalia Rebecca Lin
 -Index
 -Models
 
+Link al Google Drive para el video de explicación:
+https://drive.google.com/drive/folders/11z3GrahluKozPkx-vGIhN1rVOXzrUZJV?usp=sharing
+
 En la TERMINAL de VSCode: python manage.py runserver
 1) Entrar al link
 
-En el link/blog:
 2) Hacer click en "Home" (página de Inicio)
 3) Hacer click en "Acerca de mí" (página de About) -> agregar /about/ al link o apretar directamente el tab. Bajar para leer el texto
 4) Hacer click en "Pages". Bajar para ver el titulo.
